@@ -25,6 +25,11 @@ h3 {
   font-family:'Verdana';
 }
 
+#label {
+  color: #FFFFFF;
+  font-family:'Verdana';
+}
+
 #homeButton {
   position: absolute;
   left: 1250px;
