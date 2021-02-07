@@ -8,6 +8,10 @@ p {
   font-family:'Verdana';
 }
 
+input {
+  margin-right:30px;
+}
+
 h1 {
   text-align: center;
   color: #FFFFFF;
