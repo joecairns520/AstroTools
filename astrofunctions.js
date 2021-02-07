@@ -1,4 +1,3 @@
 function printRADec(){
-  document.getElementById('display').innerHTML = 
-                    document.getElementById("RA").value;
+  document.getElementById('display').innerHTML = document.getElementById("RA").value;
 }
