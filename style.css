@@ -1,19 +1,13 @@
 body {
   background-color: #405068;
+  font-family:'Verdana';
+   color: #FFFFFF;
 }
 
 h1 {
-  color: #FFFFFF;
   text-align: center;
-  font-family:'Verdana';
 }
 
 h2 {
-  color: #FFFFFF;
-  font-family:'Verdana';
-}
-
-p {
-  color: #FFFFFF;
-  font-family:'Verdana';
+  text-align: center;
 }
