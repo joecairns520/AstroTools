@@ -3,6 +3,11 @@ body {
   font-family:'Verdana';
 }
 
+p {
+  color: #FFFFFF;
+  font-family:'Verdana';
+}
+
 h1 {
   text-align: center;
   color: #FFFFFF;
@@ -14,6 +19,5 @@ h2 {
 }
 
 h3 {
-  text-align: center;
   color: #FFFFFF;
 }
