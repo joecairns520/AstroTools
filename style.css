@@ -1,7 +1,7 @@
 body {
   background-color: #405068;
   font-family:'Verdana';
-   color: #FFFFFF;
+  color: #FFFFFF;
 }
 
 h1 {
@@ -10,4 +10,7 @@ h1 {
 
 h2 {
   text-align: center;
+}
+
+h3 {
 }
