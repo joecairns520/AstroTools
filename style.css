@@ -25,6 +25,12 @@ h3 {
   font-family:'Verdana';
 }
 
+#homeButton {
+  position: absolute;
+  left: 100px;
+  top: 150px;
+}
+
 .button {
   background-color: #B7B7B7;
   border: none;
@@ -35,5 +41,4 @@ h3 {
   display: inline-block;
   font-size: 16px;
   margin: 4px 2px;
-  
 }
