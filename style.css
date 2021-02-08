@@ -47,6 +47,12 @@ img {
   top: 20px;
 }
 
+#img_container {
+    position:relative;
+    display:inline-block;
+    text-align:center;
+}
+
 .button {
   background-color: #B7B7B7;
   border: none;
