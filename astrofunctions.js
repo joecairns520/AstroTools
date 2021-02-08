@@ -7,10 +7,10 @@ function printRADec(){
   var ra_in = document.getElementById("RA").value;
   var dec_in = document.getElementById("Dec").value;
   
-  if (!isNaN(ra_in) && !isNaN(dec_in)) { // If both RA and Dec can be parsed as numbers (i.e. not not a number).
+  //if (!isNaN(ra_in) && !isNaN(dec_in)) { // If both RA and Dec can be parsed as numbers (i.e. not not a number).
     // Convert the input ra and dec into floats
-    var ra_float = parseFloat(ra_in);
-    var dec_float = parseFloat(dec_in);
+    //var ra_float = parseFloat(ra_in);
+    //var dec_float = parseFloat(dec_in);
     
     // Convert into hh:mm:ss ±dd:mm:ss format
     //var ra_hh = Math.floor(ra_float / 15.0);
@@ -28,7 +28,7 @@ function printRADec(){
     //document.getElementById('display').innerHTML = 'RA: ' + ra_out + ', Dec: ' + dec_out;
     document.getElementById('display').innerHTML = 'I am in degrees!';
     
-  } else if (ra_in.indexOf(':') > -1) { // If there are : symbols present in the strings...
+  if (ra_in.indexOf(':') > -1) { // If there are : symbols present in the strings...
     // Split the string up into subarrays containing the numbers in between the : symbols
     var ra_split = ra_in.split(":");
     var dec_split = dec_in.split(":");
