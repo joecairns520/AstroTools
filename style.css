@@ -48,9 +48,10 @@ img {
 }
 
 #img_container {
-    position:relative;
-    display:inline-block;
-    text-align:center;
+  position:relative;
+  display:inline-block;
+  text-align:center;
+  padding:10px;
 }
 
 .button {
