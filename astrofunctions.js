@@ -25,9 +25,10 @@ function printRADec(){
     var dec_out = dec_dd.toString() + ":" + dec_mm.toString() + ":" + dec_ss.toFixed(5).toString();
     
     // Output the result into the display 
-    document.getElementById('display').innerHTML =":RA: " + ra_out + ", Dec: " + dec_out;
+    document.getElementById('display').innerHTML = 'RA: ' + ra_out + ', Dec: ' + dec_out;
+
   
-  } else if ((ra_in.indexOf(":") > -1) && (dec_in.indexOf(":") > -1)) { // If there are : symbols present in the strings...
+ } else if ((ra_in.indexOf(":") > -1) && (dec_in.indexOf(":") > -1)) { // If there are : symbols present in the strings...
     // Split the string up into subarrays containing the numbers in between the : symbols
     var ra_split = ra_in.split(":");
     var dec_split = dec_in.split(":");
