@@ -21,11 +21,11 @@ function printRADec(){
     var dec_mm = Math.floor((dec_float - dec_dd) * 60.0);
     var dec_ss = (((dec_float - dec_dd) * 60.0) - dec_mm) * 60.0;
     
-    var ra_out = ra_hh.toString() + ':' + ra_mm.toString() + ':' ra_ss.toFixed(5).toString();
-    var dec_out = dec_dd.toString() + ':' + dec_mm.toString() + ':' dec_ss.toFixed(5).toString();
+    var ra_out = ra_hh.toString() + ":" + ra_mm.toString() + ":" + ra_ss.toFixed(5).toString();
+    var dec_out = dec_dd.toString() + ":" + dec_mm.toString() + ":" + dec_ss.toFixed(5).toString();
     
     // Output the result into the display 
-    document.getElementById('display').innerHTML = 'RA: ' + ra_out + ', Dec: ' + dec_out;
+    document.getElementById('display').innerHTML =":RA: " + ra_out + ", Dec: " + dec_out;
   
   } else if ((ra_in.indexOf(":") > -1) && (dec_in.indexOf(":") > -1)) { // If there are : symbols present in the strings...
     // Split the string up into subarrays containing the numbers in between the : symbols
