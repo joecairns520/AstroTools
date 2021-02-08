@@ -25,6 +25,13 @@ h3 {
   font-family:'Verdana';
 }
 
+ul {
+  color: #FFFFFF;
+  font-family:'Verdana';
+  list-style-type: circle;
+}
+  
+
 #label {
   color: #FFFFFF;
   font-family:'Verdana';
