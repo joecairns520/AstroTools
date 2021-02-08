@@ -6,7 +6,7 @@ function printRADec(){
   {
     var ra_split = ra_in.split(":");
     var dec_split = dec_in.split(":");
-    document.getElementById('display').innerHTML = ra_split;
+    document.getElementById('display').innerHTML = ra_split[0];
   }
  
 }
