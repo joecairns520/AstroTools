@@ -26,7 +26,8 @@ function printRADec(){
     
     // Output the result into the display 
     //document.getElementById('display').innerHTML = 'RA: ' + ra_out + ', Dec: ' + dec_out;
-    document.getElementById('display').innerHTML = 'I am in degrees!';
+    //document.getElementById('display').innerHTML = 'I am in degrees!';
+  }
     
   if (ra_in.indexOf(':') > -1) { // If there are : symbols present in the strings...
     // Split the string up into subarrays containing the numbers in between the : symbols
@@ -40,11 +41,11 @@ function printRADec(){
     // Output the result into the display 
     document.getElementById('display').innerHTML = 'RA: ' + ra_out + ', Dec: ' + dec_out;
     
-  } else {
+  } //else {
     
     // Output the result into the display 
-    document.getElementById('display').innerHTML = "Sorry I don't recognise that format, please try again!";
+    //document.getElementById('display').innerHTML = "Sorry I don't recognise that format, please try again!";
     
-  }
+  //}
  
 }
