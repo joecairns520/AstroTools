@@ -4,7 +4,9 @@ function printRADec(){
   
   if (ra_in.indexOf(':') > -1)
   {
-    document.getElementById('display').innerHTML = 'There is a : here!';
+    var ra_split = ra_in.split(":");
+    var dec_split = dec_in.split(":");
+    document.getElementById('display').innerHTML = ra_split;
   }
  
 }
