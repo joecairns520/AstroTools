@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  
+  <head>
+    <link rel="stylesheet" href="style.css">
+    <script src="astrofunctions.js"></script>
+  </head>
+  
+  <body>
+    
+    <h1>AstroTools</h1>
+    
+    <button class="button" id="homeButton" onclick="document.location='index.html'">Home</button>
+    
+    <h3>Field Finder</h3>
+    <p>This page will read in an RA and Dec and find the astronomical field that the coordinates correspond to (if any). These RA and Dec coordinates may be in the following formats:</p>
+    <ul>
+      <li>Degrees</li>
+      <li>hh:mm:ss ±dd:mm:ss</li>
+    </ul> 
+    
+   
+     <form>
+       <label for="RA" id="label">RA:</label>
+       <input type="text" class="radec" name="RA" id="RA">
+       <label for="Dec" id="label">Dec:</label>
+       <input type="text" class="radec" name="Dec" id="Dec"><br><br>
+       <button type="button" class="button" onclick="findField()">Submit</button>
+    </form> 
+    
+  <p><span id='display'></span></p>
+
+  </body>
+</html>
