@@ -1,7 +1,7 @@
 // This code will use a number of functions to generate the data and the plot for the elevation-plot.html page.
 
 // First, I'll define a function that returns the number of days from J2000.
-function printRADec(date_str, time_str) {
+function days_from_J2000(date_str, time_str) {
    
    var leap_years = [2008., 2012., 2016., 2020., 2024.];
    
