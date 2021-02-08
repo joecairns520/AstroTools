@@ -44,7 +44,7 @@ function printRADec(){
   } else {
     
     // Output the result into the display 
-    document.getElementById('display').innerHTML = "Sorry I don't recognise that format, please try again!";
+    document.getElementById('display').innerHTML = "Sorry I do not recognise that format, please try again!";
     
   }
  
