@@ -13,20 +13,18 @@ function printRADec(){
     var dec_float = parseFloat(dec_in);
     
     // Convert into hh:mm:ss ±dd:mm:ss format
-    var ra_hh = Math.floor(ra_float / 15.0)
-    var ra_mm = Math.floor(((ra_float / 15.0) - ra_hh) * 60.0)
-    var ra_ss = (((ra_float / 15.0) - ra_hh) * 60.0) - ra_mm) * 60.0
+    var ra_hh = Math.floor(ra_float / 15.0);
+    var ra_mm = Math.floor(((ra_float / 15.0) - ra_hh) * 60.0);
+    var ra_ss = (((ra_float / 15.0) - ra_hh) * 60.0) - ra_mm) * 60.0;
     
-    var dec_dd = Math.floor(dec_float)
-    var dec_mm = Math.floor((dec_float - dec_dd) * 60.0)
-    var dec_ss = (((dec_float - dec_dd) * 60.0) - dec_mm) * 60.0
+    var dec_dd = Math.floor(dec_float);
+    var dec_mm = Math.floor((dec_float - dec_dd) * 60.0);
+    var dec_ss = (((dec_float - dec_dd) * 60.0) - dec_mm) * 60.0;
     
-    var ra_out = ra_hh.toString() + ':' + ra_mm.toString() + ':' ra_ss.toFixed(5).toString()
-    var dec_out = dec_dd.toString() + ':' + dec_mm.toString() + ':' dec_ss.toFixed(5).toString()
+    var ra_out = ra_hh.toString() + ':' + ra_mm.toString() + ':' ra_ss.toFixed(5).toString();
+    var dec_out = dec_dd.toString() + ':' + dec_mm.toString() + ':' dec_ss.toFixed(5).toString();
     
-  }
-  
-  else if (ra_in.indexOf(':') > -1) { // If there are : symbols present in the strings...
+  } else if (ra_in.indexOf(':') > -1) { // If there are : symbols present in the strings...
     // Split the string up into subarrays containing the numbers in between the : symbols
     var ra_split = ra_in.split(":");
     var dec_split = dec_in.split(":");
