@@ -7,7 +7,7 @@ function printRADec(){
   var ra_in = document.getElementById("RA").value;
   var dec_in = document.getElementById("Dec").value;
   
-  if (!isNaN(ra_in) && !isNaN(dec_in)) { // If both RA and Dec can be parsed as numbers (i.e. not not a number).
+  if (isNaN(ra_in) === false && isNaN(dec_in) === false) { // If both RA and Dec can be parsed as numbers (i.e. not not a number).
     // Convert the input ra and dec into floats
     var ra_float = parseFloat(ra_in);
     var dec_float = parseFloat(dec_in);
