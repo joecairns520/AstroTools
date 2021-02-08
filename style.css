@@ -30,8 +30,12 @@ ul {
   font-family:'Verdana';
   list-style-type: circle;
 }
- 
 
+img {
+  padding: 5px;
+  width: 150px;
+}
+ 
 #label {
   color: #FFFFFF;
   font-family:'Verdana';
