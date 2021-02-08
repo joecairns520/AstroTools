@@ -29,7 +29,7 @@ function printRADec(){
     //document.getElementById('display').innerHTML = 'I am in degrees!';
   //}
     
-  if (ra_in.indexOf(':') > -1) { // If there are : symbols present in the strings...
+  if (ra_in.indexOf(":") > -1) { // If there are : symbols present in the strings...
     // Split the string up into subarrays containing the numbers in between the : symbols
     var ra_split = ra_in.split(":");
     var dec_split = dec_in.split(":");
@@ -39,7 +39,7 @@ function printRADec(){
     var dec_out = (parseFloat(dec_split.slice(0, 1)) + (parseFloat(dec_split.slice(0, 2)) / 60.0) + (parseFloat(dec_split.slice(0, 3)) / 3600.0)).toFixed(5).toString();
  
     // Output the result into the display 
-    document.getElementById('display').innerHTML = 'RA: ' + ra_out + ', Dec: ' + dec_out;
+    document.getElementById('display').innerHTML = "RA: " + ra_out + ", Dec: " + dec_out;
     
   } //else {
     
