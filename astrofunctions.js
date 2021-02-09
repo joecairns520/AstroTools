@@ -23,7 +23,7 @@ function Dec_dmsToDegrees(dec) {
 
 // Finally, we have a function that converts Dec from decimal degrees to dms
 function Dec_degreesTodms(dec) {
-  var dec_float = parseFloat(dec_in);
+  var dec_float = parseFloat(dec);
   
   var dec_dd = Math.floor(dec_float);
   var dec_mm = Math.floor((dec_float - dec_dd) * 60.0);
