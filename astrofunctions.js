@@ -55,8 +55,8 @@ function printRADec(){
     var dec_split = dec_in.split(":");
     
     // Convert into degrees
-    var ra_out = RA_hmsToDegrees(ra_in);
-    var dec_out = Dec_dmsToDegrees(dec_in);
+    var ra_out = RA_hmsToDegrees(ra_split);
+    var dec_out = Dec_dmsToDegrees(dec_split);
  
     // Output the result into the display 
     document.getElementById('display').innerHTML = "RA: " + ra_out + ", Dec: " + dec_out;
