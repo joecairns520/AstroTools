@@ -69,3 +69,15 @@ function printRADec(){
   }
  
 }
+
+
+// This function will be used by the elevation calculator, and calculates the Julian date given a day, month, year and UT time
+function JD(day, month, year, UT) {
+   var julian_day = (367 * year) - Math.floor(7 * (year + Math.floor((month + 9) / 12)) / 4) + Math.floor(275 * month / 9) + day + 1721013.5 + (UT / 24);
+   return julian_day;
+}
+
+// This function reads in a Julian date and converts it into a J2000 epoch date (e.g. days since 1st January 2000 at 1200
+function daysSinceJ2000(JD) {
+  return  JD - 2451545.0;
+}
