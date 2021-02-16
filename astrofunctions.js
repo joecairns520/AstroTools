@@ -31,7 +31,7 @@ function Dec_degreesTodms(dec) {
   
   return dec_dd.toString() + ":" + dec_mm.toString() + ":" + dec_ss.toFixed(5).toString();
 }
-  
+
 
 // This function will primarily be used for the convert RA and Dec page - it basically reads in the inputs from the RA and Dec fields and uses the above 
 // functions to convert them into whatever the desired format before outputting this back onto the page.
@@ -81,3 +81,32 @@ function JD(day, month, year, UT) {
 function daysSinceJ2000(JD) {
   return  JD - 2451545.0;
 }
+
+// This function calculates the Local Sidereal Time (LST). In this function, d is the days since J2000, UT is the decimal hours and long is the longitude
+// in decimal degrees.
+function returnLST(d, UT, long) {
+  return 100.46 + (0.985647 * d) + long + (15.0 * UT);
+}
+
+// This function returns the Hour angle of a source, which basically takes into account the rotation of the Earth. It is essentially just the Local Sidereal time
+// minus the RA of the source, both in decimal degrees. Note that we write this function such that, if the hour angle is negative, we add 360 degrees so that
+// we keep the HA in the range 0 ---> 360.
+function returnHA(LST, RA) {
+  if (LST - RA < 0.0) {
+    var HA = LST - RA + 360.0;
+  } else {
+    var HA = LST - RA;
+  }
+  return HA;
+}
+
+// This function reads in the Dec and HA of a source along with the Latitude of the observer, and returns the altitude (or elevation) of the source. 
+function returnElevation(Dec, HA, lat) {
+  return Math.asin(Math.sin(Dec) * Math.sin(lat) + Math.cos(Dec) * Math.cos(lat) * Math.cos(HA));
+}
+
+// This function puts basically all of the above functions together - reading in the RA and Dec of a source in decimal degrees along with the longitude and
+// latitude of the observer and the UT time and date of the observations, and returning the elevation of the source at that time and location
+function elevationFromObserver(RA, Dec, long, lat, UT, date) {
+
+    
