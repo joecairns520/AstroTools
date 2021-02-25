@@ -17,6 +17,22 @@
     <h3>Elevation Plot</h3>
     <p>Plot the elevation against time for a source given a particular position on the globe. This position can be defined through a longitude or latitude or can be taken from an existing database of locations.</p>
     
+    <form>
+       <label for="RA" id="label">RA:</label>
+       <input type="text" class="radec" name="RA" id="RA">
+       <label for="Dec" id="label">Dec:</label>
+       <input type="text" class="radec" name="Dec" id="Dec"><br><br>
+       <label for="long" id="label">long:</label>
+       <input type="text" class="radec" name="long" id="long">
+       <label for="lat" id="label">lat:</label>
+       <input type="text" class="radec" name="lat" id="lat"><br><br>
+       <label for="UT" id="label">UT:</label>
+       <input type="text" class="radec" name="UT" id="UT">
+       <label for="date" id="label">date:</label>
+       <input type="text" class="radec" name="date" id="date"><br><br>
+       <button type="button" class="button" onclick="elevationFromObserver()">Submit</button>
+    </form> 
+    
     <canvas id="myChart" width="1600" height="900"></canvas>
     
   </body>
