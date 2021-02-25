@@ -110,11 +110,11 @@ function returnElevation(Dec, HA, lat) {
 // the date parameter must be in ddmmyyyy format.
 function elevationFromObserver(){
   // Take RA and Dec from the input fields
-  var RA = document.getElementById("RA").value;
-  var Dec = document.getElementById("Dec").value;
-  var long = document.getElementById("long").value;
-  var lat = document.getElementById("lat").value;
-  var UT = document.getElementById("UT").value;
+  var RA = parseFloat(document.getElementById("RA").value);
+  var Dec = parseFloat(document.getElementById("Dec").value);
+  var long = parseFloat(document.getElementById("long").value);
+  var lat = parseFloat(document.getElementById("lat").value);
+  var UT = parseFloat(document.getElementById("UT").value);
   var date = document.getElementById("date").value;
   
   // First, split the date up into day, month and year
