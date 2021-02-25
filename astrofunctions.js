@@ -106,7 +106,27 @@ function returnElevation(Dec, HA, lat) {
 }
 
 // This function puts basically all of the above functions together - reading in the RA and Dec of a source in decimal degrees along with the longitude and
-// latitude of the observer and the UT time and date of the observations, and returning the elevation of the source at that time and location
+// latitude of the observer and the UT time and date of the observations, and returning the elevation of the source at that time and location. Note here that
+// the date parameter must be in ddmmyyyy format.
 function elevationFromObserver(RA, Dec, long, lat, UT, date) {
-
-    
+  // First, split the date up into day, month and year
+  day = parseFloat(date.slice(0, 2));
+  month = parseFloat(date.slice(2, 4));
+  year = parseFloat(date.slice(4, 8));
+  
+  // Calculate the Julian Date
+  julian_date = JD(day, month, year, UT);
+  
+  // Calculate days since J2000
+  days_since_J2000 = daysSinceJ2000(julian_date);
+  
+  // Calculate Local Sidereal Time
+  LST = returnLST(days_since_J2000, UT, long);
+  
+  // Calculate the Hour Angle of the source
+  HA = returnHA(LST, RA);
+  
+  // Calculate the Elevation of the source
+  El = returnElevation(Dec, HA, lat);
+  
+  return HA, El;
