@@ -73,6 +73,7 @@ img {
 }
 
 .wrapper {
-  max-width: 100px;
-  margin: 50px auto;
+  height: 100px;
+  width: 60%;
+  margin: 5px auto;
 }
