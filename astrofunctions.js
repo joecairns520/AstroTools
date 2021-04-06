@@ -18,16 +18,22 @@ function RA_degreesTohms(ra) {
 
 // The next converts DEC from ±dms to degrees - similarly the Dec must be in the form [dd, mm, ss]
 function Dec_dmsToDegrees(dec) {
-  return (parseFloat(dec.slice(0, 1)) + (parseFloat(dec.slice(0, 2)) / 60.0) + (parseFloat(dec.slice(0, 3)) / 3600.0)).toFixed(5).toString();
+  return (parseFloat(dec.slice(0, 1)) + (parseFloat(dec.slice(1, 2)) / 60.0) + (parseFloat(dec.slice(2, 3)) / 3600.0)).toFixed(5).toString();
 }
 
 // Finally, we have a function that converts Dec from decimal degrees to dms
 function Dec_degreesTodms(dec) {
   var dec_float = parseFloat(dec);
   
-  var dec_dd = Math.floor(dec_float);
-  var dec_mm = Math.floor((dec_float - dec_dd) * 60.0);
-  var dec_ss = (((dec_float - dec_dd) * 60.0) - dec_mm) * 60.0;
+  if (dec_float >= 0) {
+      var dec_dd = Math.floor(dec_float);
+      var dec_mm = Math.floor((dec_float - dec_dd) * 60.0);
+      var dec_ss = (((dec_float - dec_dd) * 60.0) - dec_mm) * 60.0;
+    } else {
+      var dec_dd = Math.ceil(dec_float);
+      var dec_mm = Math.ceil((dec_float - dec_dd) * 60.0);
+      var dec_ss = (((dec_float - dec_dd) * 60.0) - dec_mm) * 60.0;
+    }
   
   return dec_dd.toString() + ":" + dec_mm.toString() + ":" + dec_ss.toFixed(5).toString();
 }
