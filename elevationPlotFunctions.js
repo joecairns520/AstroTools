@@ -35,14 +35,14 @@ function returnElevation(Dec, HA, lat) {
 // This function puts basically all of the above functions together - reading in the RA and Dec of a source in decimal degrees along with the longitude and
 // latitude of the observer and the UT time and date of the observations, and returning the elevation of the source at that time and location. Note here that
 // the date parameter must be in ddmmyyyy format.
-function elevationFromObserver(){
+function elevationFromObserver(RA, Dec, long, lat, date){
   // Take RA and Dec from the input fields
-  var RA = parseFloat(document.getElementById("RA").value);
-  var Dec = parseFloat(document.getElementById("Dec").value);
-  var long = parseFloat(document.getElementById("long").value);
-  var lat = parseFloat(document.getElementById("lat").value);
-  var UT = parseFloat(document.getElementById("UT").value);
-  var date = document.getElementById("date").value;
+//   var RA = parseFloat(document.getElementById("RA").value);
+//   var Dec = parseFloat(document.getElementById("Dec").value);
+//   var long = parseFloat(document.getElementById("long").value);
+//   var lat = parseFloat(document.getElementById("lat").value);
+//   var UT = parseFloat(document.getElementById("UT").value);
+//   var date = document.getElementById("date").value;
   
   // First, split the date up into day, month and year
   var day = parseFloat(date.slice(0, 2));
