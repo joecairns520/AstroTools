@@ -2,7 +2,7 @@
 
 // This first function will convert RA from hms to decimal degrees. For this function, the RA must be in an array with three elements (e.g. [hh, mm, ss])
 function RA_hmsToDegrees(ra) {
-  return (((360.0 / 24.0) * parseFloat(ra.slice(0, 1))) + ((360.0 / 24.0) * (parseFloat(ra.slice(0, 2)) / 60.0)) + ((360.0 / 24.0) * (parseFloat(ra.slice(0, 3)) / 3600.0))).toFixed(5).toString();
+  return (((360.0 / 24.0) * parseFloat(ra.slice(0, 1))) + ((360.0 / 24.0) * (parseFloat(ra.slice(1, 2)) / 60.0)) + ((360.0 / 24.0) * (parseFloat(ra.slice(2, 3)) / 3600.0))).toFixed(5).toString();
 }
 
 // The next converts RA from degrees to hms
@@ -18,12 +18,12 @@ function RA_degreesTohms(ra) {
 
 // The next converts DEC from ±dms to degrees - similarly the Dec must be in the form [dd, mm, ss]
 function Dec_dmsToDegrees(dec) {
-  if (parseFloat(dec_split.slice(0, 1)) >= 0) {
-    return (parseFloat(dec.slice(0, 1)) + (parseFloat(dec.slice(1, 2)) / 60.0) + (parseFloat(dec.slice(2, 3)) / 3600.0)).toFixed(5).toString();
+  if (parseFloat(dec.slice(0, 1)) >= 0) {
+    var dec_out = (parseFloat(dec.slice(0, 1)) + (parseFloat(dec.slice(1, 2)) / 60.0) + (parseFloat(dec.slice(2, 3)) / 3600.0)).toFixed(5).toString();
+  } else {
+    var dec_out = return (parseFloat(dec.slice(0, 1)) - (parseFloat(dec.slice(1, 2)) / 60.0) - (parseFloat(dec.slice(2, 3)) / 3600.0)).toFixed(5).toString();
   }
-  else {
-    return (parseFloat(dec.slice(0, 1)) - (parseFloat(dec.slice(1, 2)) / 60.0) - (parseFloat(dec.slice(2, 3)) / 3600.0)).toFixed(5).toString();
-  }
+  return dec_out;
 }
 
 // Finally, we have a function that converts Dec from decimal degrees to dms
