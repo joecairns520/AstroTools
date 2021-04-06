@@ -17,6 +17,7 @@ function printRADec(){
     var ra_mm = Math.floor(((ra_float / 15.0) - ra_hh) * 60.0);
     var ra_ss = ((((ra_float / 15.0) - ra_hh) * 60.0) - ra_mm) * 60.0;
     
+    // If dec is positive we want to round DOWN to get leftover minutes and seconds. If dec is negative we want to round UP!
     if (dec_float >= 0) {
       var dec_dd = Math.floor(dec_float);
       var dec_mm = Math.floor((dec_float - dec_dd) * 60.0);
@@ -41,8 +42,13 @@ function printRADec(){
     
     // Convert into degrees
     var ra_out = ((15.0 * parseFloat(ra_split.slice(0, 1))) + (15.0 * (parseFloat(ra_split.slice(1, 2)) / 60.0)) + (15.0 * (parseFloat(ra_split.slice(2, 3)) / 3600.0))).toFixed(5).toString();
-    var dec_out = (parseFloat(dec_split.slice(0, 1)) + (parseFloat(dec_split.slice(1, 2)) / 60.0) + (parseFloat(dec_split.slice(2, 3)) / 3600.0)).toFixed(5).toString();
- 
+    
+    // If Dec is positive then we can treat this as normal. Otherwise the mm and ss will be positive so we need to subtract them from the hh
+    if (parseFloat(dec_split.slice(0, 1)) >= 0) {
+      var dec_out = (parseFloat(dec_split.slice(0, 1)) + (parseFloat(dec_split.slice(1, 2)) / 60.0) + (parseFloat(dec_split.slice(2, 3)) / 3600.0)).toFixed(5).toString();
+    } else {
+      var dec_out = (parseFloat(dec_split.slice(0, 1)) - (parseFloat(dec_split.slice(1, 2)) / 60.0) - (parseFloat(dec_split.slice(2, 3)) / 3600.0)).toFixed(5).toString();
+    }
     // Output the result into the display 
     document.getElementById('display').innerHTML = "RA: " + ra_out + ", Dec: " + dec_out;
     
