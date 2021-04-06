@@ -40,12 +40,11 @@ function printRADec(){
     var dec_split = dec_in.split(":");
     
     // Convert into degrees
-    var ra_out = ((15.0 * parseFloat(ra_split.slice(0, 1))) + (15.0 * (parseFloat(ra_split.slice(0, 2)) / 60.0)) + (15.0 * (parseFloat(ra_split.slice(0, 3)) / 3600.0))).toFixed(5).toString();
-    var dec_out = (parseFloat(dec_split.slice(0, 1)) + (parseFloat(dec_split.slice(0, 2)) / 60.0) + (parseFloat(dec_split.slice(0, 3)) / 3600.0)).toFixed(5).toString();
+    var ra_out = ((15.0 * parseFloat(ra_split.slice(0, 1))) + (15.0 * (parseFloat(ra_split.slice(1, 2)) / 60.0)) + (15.0 * (parseFloat(ra_split.slice(2, 3)) / 3600.0))).toFixed(5).toString();
+    var dec_out = (parseFloat(dec_split.slice(0, 1)) + (parseFloat(dec_split.slice(1, 2)) / 60.0) + (parseFloat(dec_split.slice(2, 3)) / 3600.0)).toFixed(5).toString();
  
     // Output the result into the display 
-    // document.getElementById('display').innerHTML = "RA: " + ra_out + ", Dec: " + dec_out;
-    document.getElementById('display').innerHTML = ra_split.slice(0, 1) + ', ' + ra_split.slice(0, 2) + ', ' + ra_split.slice(0, 3);
+    document.getElementById('display').innerHTML = "RA: " + ra_out + ", Dec: " + dec_out;
     
   } else {
     
