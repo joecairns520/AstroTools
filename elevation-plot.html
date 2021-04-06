@@ -3,9 +3,7 @@
   
   <head>
     <link rel="stylesheet" href="style.css">
-    <script src="astrofunctions.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
-    <script src="elevation_plot.js"></script>
   </head>
   
   <body>
@@ -16,27 +14,12 @@
     
     <h3>Elevation Plot hello</h3>
     <p>Plot the elevation against time for a source given a particular position on the globe. This position can be defined through a longitude or latitude or can be taken from an existing database of locations.</p>
-    
-    <form>
-       <label for="RA" id="label">RA:</label>
-       <input type="text" class="radec" name="RA" id="RA">
-       <label for="Dec" id="label">Dec:</label>
-       <input type="text" class="radec" name="Dec" id="Dec"><br><br>
-       <label for="long" id="label">long:</label>
-       <input type="text" class="radec" name="long" id="long">
-       <label for="lat" id="label">lat:</label>
-       <input type="text" class="radec" name="lat" id="lat"><br><br>
-       <label for="UT" id="label">UT:</label>
-       <input type="text" class="radec" name="UT" id="UT">
-       <label for="date" id="label">date:</label>
-       <input type="text" class="radec" name="date" id="date"><br><br>
-       <button type="button" class="button" onclick="elevationFromObserver()">Submit</button>
-    </form> 
-    
-    <p><span id='display'></span></p>
+    <div>
+      <h1>World population over time</h1>
+      <h2>Number of people (in millions) living on earth, the last 500 years</h2>
 
-    
     <canvas id="myChart" width="1600" height="900"></canvas>
-    
+    </div>
+    <script src="elevation_plot.js"></script>
   </body>
 </html>
