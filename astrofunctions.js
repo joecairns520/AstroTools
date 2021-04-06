@@ -21,7 +21,7 @@ function Dec_dmsToDegrees(dec) {
   if (parseFloat(dec.slice(0, 1)) >= 0) {
     var dec_out = (parseFloat(dec.slice(0, 1)) + (parseFloat(dec.slice(1, 2)) / 60.0) + (parseFloat(dec.slice(2, 3)) / 3600.0)).toFixed(5).toString();
   } else {
-    var dec_out = return (parseFloat(dec.slice(0, 1)) - (parseFloat(dec.slice(1, 2)) / 60.0) - (parseFloat(dec.slice(2, 3)) / 3600.0)).toFixed(5).toString();
+    var dec_out = (parseFloat(dec.slice(0, 1)) - (parseFloat(dec.slice(1, 2)) / 60.0) - (parseFloat(dec.slice(2, 3)) / 3600.0)).toFixed(5).toString();
   }
   return dec_out;
 }
