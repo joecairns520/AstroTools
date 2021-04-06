@@ -72,8 +72,8 @@ img {
   margin-right: 30px;
 }
 
-.wrapper {
-  height: 80px;
+.plotWrapper {
+  height: 90px;
   width: 80%;
   margin: 5px auto;
 }
