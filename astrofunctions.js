@@ -18,7 +18,12 @@ function RA_degreesTohms(ra) {
 
 // The next converts DEC from ±dms to degrees - similarly the Dec must be in the form [dd, mm, ss]
 function Dec_dmsToDegrees(dec) {
-  return (parseFloat(dec.slice(0, 1)) + (parseFloat(dec.slice(1, 2)) / 60.0) + (parseFloat(dec.slice(2, 3)) / 3600.0)).toFixed(5).toString();
+  if (parseFloat(dec_split.slice(0, 1)) >= 0) {
+    return (parseFloat(dec.slice(0, 1)) + (parseFloat(dec.slice(1, 2)) / 60.0) + (parseFloat(dec.slice(2, 3)) / 3600.0)).toFixed(5).toString();
+  }
+  else {
+    return (parseFloat(dec.slice(0, 1)) - (parseFloat(dec.slice(1, 2)) / 60.0) - (parseFloat(dec.slice(2, 3)) / 3600.0)).toFixed(5).toString();
+  }
 }
 
 // Finally, we have a function that converts Dec from decimal degrees to dms
