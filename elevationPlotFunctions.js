@@ -37,11 +37,11 @@ function returnElevation(Dec, HA, lat) {
 // the date parameter must be in ddmmyyyy format.
 function elevationFromObserver(RA, Dec, long, lat, date){
    // Take RA and Dec from the input fields
-     var RA = parseFloat(document.getElementById("RA").value);
-     var Dec = parseFloat(document.getElementById("Dec").value);
-     var long = parseFloat(document.getElementById("long").value);
-     var lat = parseFloat(document.getElementById("lat").value);
-     var date = document.getElementById("date").value;
+//      var RA = parseFloat(document.getElementById("RA").value);
+//      var Dec = parseFloat(document.getElementById("Dec").value);
+//      var long = parseFloat(document.getElementById("long").value);
+//      var lat = parseFloat(document.getElementById("lat").value);
+//      var date = document.getElementById("date").value;
 
    // We're going to want the UT to span the whole day for the plot 
    var UT_time = [0, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500, 1600, 1700, 1800, 1900, 2000, 2100, 2200, 2300];
