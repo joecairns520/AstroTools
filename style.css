@@ -71,3 +71,9 @@ img {
 .radec {
   margin-right: 30px;
 }
+
+.plotWrapper {
+  height: 90px;
+  width: 80%;
+  margin: 5px auto;
+}

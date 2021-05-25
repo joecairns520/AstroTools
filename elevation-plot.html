@@ -3,9 +3,7 @@
   
   <head>
     <link rel="stylesheet" href="style.css">
-    <script src="astrofunctions.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
-    <script src="elevation_plot.js"></script>
   </head>
   
   <body>
@@ -16,8 +14,10 @@
     
     <h3>Elevation Plot</h3>
     <p>Plot the elevation against time for a source given a particular position on the globe. This position can be defined through a longitude or latitude or can be taken from an existing database of locations.</p>
-    
-    <canvas id="myChart" width="1600" height="900"></canvas>
-    
+    <div class="plotWrapper">
+
+    <canvas id="myChart"></canvas>
+    </div>
+    <script src="elevationPlotFunctions.js"></script>
   </body>
 </html>
