@@ -44,7 +44,7 @@ function elevationFromObserver(RA, Dec, long, lat, date){
 //      var date = document.getElementById("date").value;
 
    // We're going to want the UT to span the whole day for the plot 
-   var UT_time = [0, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500, 1600, 1700, 1800, 1900, 2000, 2100, 2200, 2300];
+   var UT_time = [0,100,200,300,400,500,600,700,800,900,1000,1100,1200,1300,1400,1500,1600,1700,1800,1900,2000,2100,2200,2300];
 
    // Split the date up into day, month and year
    var day = parseFloat(date.slice(0, 2));
@@ -53,17 +53,17 @@ function elevationFromObserver(RA, Dec, long, lat, date){
    
    // Define the empty array where we will push the elevation results
    var elevations = [];
-
+	
    // Now the stuff that we need the UT for we'll have to put inside the loop
-   for (var i = 0; i < UT.length; i++) {
+	for (var i = 0; i < UT_time.length; i++) {
       // Calculate the Julian Date
-      var julian_date = JD(day, month, year, UT);
+	   var julian_date = JD(day, month, year, UT_time[i]);
 
       // Calculate days since J2000
       var days_since_J2000 = daysSinceJ2000(julian_date);
 
       // Calculate Local Sidereal Time
-      var LST = returnLST(days_since_J2000, UT, long);
+      var LST = returnLST(days_since_J2000, UT_time[i], long);
 
       // Calculate the Hour Angle of the source
       var HA = returnHA(LST, RA);
@@ -72,20 +72,16 @@ function elevationFromObserver(RA, Dec, long, lat, date){
       var El = returnElevation(Dec, HA, lat);
       
       elevations.push(El);
-   } 
-  
-  
-  // Output the result into the display 
-  document.getElementById('display').innerHTML = 'Elevations: ' + elevations;
-  
-}
+    } 
 
+   return elevations;
+}
 
 // Our labels along the x-axis
 var UT_time = [0, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500, 1600, 1700, 1800, 1900, 2000, 2100, 2200, 2300];
 // For drawing the lines
 // var elevation = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 110, 100, 90, 80, 70, 60, 50, 40, 30, 20, 10]
-var elevation = elevationFromObserver(50.0, 50.0, 50.0, 50.0, 07042021)
+var elevation = elevationFromObserver(50.0, 50.0, 50.0, 50.0, '07042021')
 // Output the result into the display 
 document.getElementById('display').innerHTML = elevation;
 
