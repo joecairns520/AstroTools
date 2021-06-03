@@ -12,7 +12,24 @@ function daysSinceJ2000(JD) {
 // This function calculates the Local Sidereal Time (LST). In this function, d is the days since J2000, UT is the decimal hours and long is the longitude
 // in decimal degrees.
 function returnLST(d, UT, long) {
-   return 100.46 + (0.985647 * d) + long + (15.0 * UT);
+   var LST = 100.46 + (0.985647 * d) + long + (15.0 * UT);
+   
+   // If the LST is not between 0 and 360, we must keep adding/subtracting multiples
+   // of 360 to get it into this range
+   if (LST < 0) {
+     while (LST < 0) {
+     	LST += 360
+   	}
+   }
+   
+   if (LST > 360) {
+     while (LST > 360) {
+     	LST -= 360
+   	}
+   }
+   
+   
+   return LST;
 }
 
 // This function returns the Hour angle of a source, which basically takes into account the rotation of the Earth. It is essentially just the Local Sidereal time
@@ -29,7 +46,15 @@ function returnHA(LST, RA) {
 
 // This function reads in the Dec and HA of a source along with the Latitude of the observer, and returns the altitude (or elevation) of the source. 
 function returnElevation(Dec, HA, lat) {
-   return Math.asin(Math.sin(Dec) * Math.sin(lat) + Math.cos(Dec) * Math.cos(lat) * Math.cos(HA));
+	// Convert all angles into radians
+    Dec = Dec * (Math.PI / 180.0)
+    lat = lat * (Math.PI / 180.0)
+    HA = HA * (Math.PI / 180.0)
+    ALT = Math.asin(Math.sin(Dec)*Math.sin(lat) + Math.cos(Dec)*Math.cos(lat)*Math.cos(HA));
+    
+    // And convert back into degrees
+    ALT = ALT * (180.0 / Math.PI)
+    return ALT;
 }
 
 // This function puts basically all of the above functions together - reading in the RA and Dec of a source in decimal degrees along with the longitude and
@@ -44,7 +69,7 @@ function elevationFromObserver(RA, Dec, long, lat, date){
 //      var date = document.getElementById("date").value;
 
    // We're going to want the UT to span the whole day for the plot 
-   var UT_time = [0,1,2,3,4,5,6,7,8,9,10,11,12,133,14,15,16,17,18,19,20,21,22,23,24];
+   var UT_time = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24];
 
    // Split the date up into day, month and year
    var day = parseFloat(date.slice(0, 2));
@@ -76,6 +101,8 @@ function elevationFromObserver(RA, Dec, long, lat, date){
 
 	return elevations;
 }
+
+var elevation = elevationFromObserver(250.425, 36.466667, -1.9166667, 52.5 , '10081998')
 
 // Our labels along the x-axis
 var UT_time = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24];
