@@ -118,6 +118,7 @@ var myChart = new Chart(ctx, {
         data: elevation,
         label: "Target",
         borderColor: "#3e95cd",
+	color = "#FFFFFF",
         fill: false
       }
     ]
