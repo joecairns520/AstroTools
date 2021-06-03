@@ -108,7 +108,7 @@ var elevation = elevationFromObserver(250.425, 36.466667, -1.9166667, 52.5 , '10
 var UT_time = ['00:00', '01:00', '02:00', '03:00', '04:00', '05:00', '06:00', '07:00', '08:00', '09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00', '22:00', '23:00', '24:00'];
 // For drawing the lines
 // var elevation = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 110, 100, 90, 80, 70, 60, 50, 40, 30, 20, 10]
-var elevation = elevationFromObserver(15, 33, 155.0, 20.0, '07042021')
+var elevation = elevationFromObserver(333.75, -11.8, 0.1278, 51.5, '04062021')
 
 var ctx = document.getElementById("myChart");
 var myChart = new Chart(ctx, {
