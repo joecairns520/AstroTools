@@ -119,3 +119,12 @@ img {
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+.elDate{
+  background-color: #405068;
+  font-family:'Verdana';
+  margin: 20px;
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+}
