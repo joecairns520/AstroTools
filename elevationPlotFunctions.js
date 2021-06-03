@@ -44,7 +44,7 @@ function elevationFromObserver(RA, Dec, long, lat, date){
 //      var date = document.getElementById("date").value;
 
    // We're going to want the UT to span the whole day for the plot 
-   var UT_time = [0,100,200,300,400,500,600,700,800,900,1000,1100,1200,1300,1400,1500,1600,1700,1800,1900,2000,2100,2200,2300];
+   var UT_time = [0,1,2,3,4,5,6,7,8,9,10,11,12,133,14,15,16,17,18,19,20,21,22,23,24];
 
    // Split the date up into day, month and year
    var day = parseFloat(date.slice(0, 2));
