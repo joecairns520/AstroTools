@@ -56,23 +56,23 @@ function elevationFromObserver(RA, Dec, long, lat, date){
 	
    // Now the stuff that we need the UT for we'll have to put inside the loop
 	for (var i = 0; i < UT_time.length; i++) {
-      // Calculate the Julian Date
+      		// Calculate the Julian Date
 		var julian_date = JD(day, month, year, UT_time[i]);
 
-      // Calculate days since J2000
-        var days_since_J2000 = daysSinceJ2000(julian_date);
+      		// Calculate days since J2000
+       		var days_since_J2000 = daysSinceJ2000(julian_date);
 
-      // Calculate Local Sidereal Time
-        var LST = returnLST(days_since_J2000, UT_time[i], long);
+      		// Calculate Local Sidereal Time
+        	var LST = returnLST(days_since_J2000, UT_time[i], long);
 
-      // Calculate the Hour Angle of the source
-        var HA = returnHA(LST, RA);
+      		// Calculate the Hour Angle of the source
+        	var HA = returnHA(LST, RA);
 
-      // Calculate the Elevation of the source
-        var El = returnElevation(Dec, HA, lat);
+      		// Calculate the Elevation of the source
+        	var El = returnElevation(Dec, HA, lat);
       
-      	elevations.push(El);
-    } 
+      		elevations.push(El);
+    	} 
 
 	return elevations;
 }
