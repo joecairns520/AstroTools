@@ -91,7 +91,7 @@ var myChart = new Chart(ctx, {
     datasets: [
       { 
         data: elevation,
-        label: "Source",
+        label: "Target",
         borderColor: "#3e95cd",
         fill: false
       }
