@@ -14,40 +14,32 @@
     <h3>Elevation Plot</h3>
     <p>Plot the elevation against time for a source given a particular position on the globe. For now only a subset of locations are available. Remember to click "Plot" again if you change the location!</p>
     <p id="location">Selected Location: None<p>
-    <div>
+
       
-      <form>
-         <label for="RA" id="label">RA:</label>
-         <input type="text" class="radec" name="RA" id="RA">
-         <label for="Dec" id="label">Dec:</label>
-         <input type="text" class="radec" name="Dec" id="Dec">
-         <label for="Date" id="label">Date:</label>
-         <input type="text" class="radec" name="Date" id="Date">
-         
-        <div class="dropdown">
-          <button class="dropbtn">Location</button>
-           <div class="dropdown-content">
-             <a onClick="setLocation('Greenwich Observatory')" href="#">Greenwich Observatory</a>
-             <a onClick="setLocation('SMA')" href="#">SMA</a>
-             <a onClick="setLocation('ALMA')" href="#">ALMA</a>
-        </div>
-          
-        <button class="button" onclick="makePlot()">Plot</button>
-      </form> 
+    <form>
+       <label for="RA" id="label">RA:</label>
+       <input type="text" class="radec" name="RA" id="RA">
+       <label for="Dec" id="label">Dec:</label>
+       <input type="text" class="radec" name="Dec" id="Dec">
+       <label for="Date" id="label">Date:</label>
+       <input type="text" class="radec" name="Date" id="Date">
 
-
+      <div class="dropdown">
+        <button class="dropbtn">Location</button>
+         <div class="dropdown-content">
+           <a onClick="setLocation('Greenwich Observatory')" href="#">Greenwich Observatory</a>
+           <a onClick="setLocation('SMA')" href="#">SMA</a>
+           <a onClick="setLocation('ALMA')" href="#">ALMA</a>
+         </div>
       </div>
-    </div>
+    </form> 
     
-    
-    
-    
+    <button class="button" onclick="makePlot()">Plot</button>
     
     <div class="plotWrapper">
 
     <canvas id="myChart"></canvas>
     </div>
-    
     
    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
    <script src="elevationPlotFunctions.js"></script>
