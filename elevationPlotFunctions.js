@@ -128,9 +128,6 @@ function returnLongLat(location) {
 	
 }
 	
-	    
-	    
-
 // This function takes all of the above and puts it together in one function that creates the final plot!
 function makePlot() {
 	// Our labels along the x-axis
@@ -141,8 +138,9 @@ function makePlot() {
 	var longLat = returnLongLat(location);
 	
 	// Get the RA and Dec
-	
-	var elevation = elevationFromObserver(333.75, -11.8, longLat[0], longLat[1], '04062021');
+	var ra = parseFloat(document.getElementById("RA").innerHTML);
+	var dec = parseFloat(document.getElementById("Dec").innerHTML);
+	var elevation = elevationFromObserver(ra, dec, longLat[0], longLat[1], '04062021');
 	
 	var ctx = document.getElementById("myChart");
 	var myChart = new Chart(ctx, {
