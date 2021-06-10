@@ -111,15 +111,15 @@ function setLocation(locationName) {
 function returnLongLat(location) {
 	var long = 0;
 	var lat = 0;
-	if (location == "Greenwich Observatory") {
+	if (location == 'Greenwich Observatory') {
 		long = -0.0014;
 		lat = 51.4778;
 	}
-	if (location == "SMA") {
+	if (location == 'SMA') {
 		long = -155.478;
 		lat = 19.8243;
 	}
-	if (location == "ALMA") {
+	if (location == 'ALMA') {
 		long = -67.7532;
 		lat = -23.0193;
 	}
