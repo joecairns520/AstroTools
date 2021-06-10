@@ -19,14 +19,14 @@
     <div class="dropdown">
       
       <button class="dropbtn">Location</button>
-      <div onclick="setLocation()" class="dropdown-content">
-        <a href="#">Greenwich Observatory</a>
-        <a href="#">SMA</a>
-        <a href="#">ALMA</a>
+      <div class="dropdown-content">
+        <a onClick="setLocation('Greenwich Observatory')" href="#">Greenwich Observatory</a>
+        <a onClick="setLocation('SMA')" href="#">SMA</a>
+        <a onClick="setLocation('ALMA')" href="#">ALMA</a>
       </div>
       
     </div>
-    
+    <p id="location"><p>
     <div class = elDate>
       <label for="Date" id="label">Date:</label>
       <input type="text" class="radec" name="Date" id="Date">
