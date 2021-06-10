@@ -126,6 +126,8 @@ function returnLongLat(location) {
 	
 	return [long, lat];
 	
+}
+	
 	    
 	    
 
