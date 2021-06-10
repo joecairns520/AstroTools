@@ -112,7 +112,7 @@ function makePlot() {
 	// Our labels along the x-axis
 	var UT_time = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24];
 	// For drawing the lines
-	var location = document.getElementById("location").innerHTML.slice(19, -1);
+	var location = document.getElementById("location").innerHTML.slice(19, );
 	var elevation = elevationFromObserver(333.75, -11.8, 0.1278, 51.5, '04062021');
 	document.getElementById("location").innerHTML = location;
 	var ctx = document.getElementById("myChart");
