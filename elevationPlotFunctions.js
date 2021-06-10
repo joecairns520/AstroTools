@@ -111,7 +111,7 @@ function setLocation(locationName) {
 var UT_time = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24];
 // For drawing the lines
 // var elevation = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 110, 100, 90, 80, 70, 60, 50, 40, 30, 20, 10]
-var elevation = elevationFromObserver(333.75, -11.8, 0.1278, 51.5, '04062021')
+var elevation = elevationFromObserver(333.75, -11.8, 0.1278, 51.5, '04062021');
 
 var ctx = document.getElementById("myChart");
 var myChart = new Chart(ctx, {
@@ -123,7 +123,6 @@ var myChart = new Chart(ctx, {
         data: elevation,
         label: "Target",
         borderColor: "#3e95cd",
-	color: "#FFFFFF",
         fill: false
       }
     ]
