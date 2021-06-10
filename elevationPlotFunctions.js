@@ -104,7 +104,7 @@ function elevationFromObserver(RA, Dec, long, lat, date){
 
 // This function will be used in the dropdown menu, and will set the location from which you want to calculate the elevation
 function setLocation(locationName) {
-	document.getElementById("location").innerHTML = document.getElementById(locationName).innerHTML;
+	document.getElementById("location").innerHTML = locationName;
 }
 
 // Our labels along the x-axis
