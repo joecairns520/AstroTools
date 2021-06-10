@@ -140,8 +140,10 @@ function makePlot() {
 	var location = document.getElementById("location").innerHTML.slice(19, );
 	var longLat = returnLongLat(location);
 	
+	// Get the RA and Dec
+	
 	var elevation = elevationFromObserver(333.75, -11.8, longLat[0], longLat[1], '04062021');
-	document.getElementById("location").innerHTML = location;
+	
 	var ctx = document.getElementById("myChart");
 	var myChart = new Chart(ctx, {
 	  type: 'line',
