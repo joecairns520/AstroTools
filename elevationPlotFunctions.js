@@ -138,8 +138,8 @@ function makePlot() {
 	var longLat = returnLongLat(location);
 	
 	// Get the RA and Dec
-	var ra = parseFloat(document.getElementById("RA").innerHTML);
-	var dec = parseFloat(document.getElementById("Dec").innerHTML);
+	var ra = parseFloat(document.getElementById("RA").value);
+	var dec = parseFloat(document.getElementById("Dec").value);
 	var elevation = elevationFromObserver(ra, dec, longLat[0], longLat[1], '04062021');
 	
 	var ctx = document.getElementById("myChart");
