@@ -107,13 +107,38 @@ function setLocation(locationName) {
 	document.getElementById("location").innerHTML = "Selected Location: " + locationName;
 }
 
+// A messy function (and I'll find a better way to do this at some point!) that reads in the location string and outputs the RA and Dec
+function returnLongLat(location) {
+	var long = 0;
+	var lat = 0;
+	if (location == "Greenwich Observatory") {
+		long = -0.0014;
+		lat = 51.4778;
+	}
+	if (location == "SMA") {
+		long = -155.478;
+		lat = 19.8243;
+	}
+	if (location == "ALMA") {
+		long = -67.7532;
+		lat = -23.0193;
+	}
+	
+	return [long, lat];
+	
+	    
+	    
+
 // This function takes all of the above and puts it together in one function that creates the final plot!
 function makePlot() {
 	// Our labels along the x-axis
 	var UT_time = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24];
-	// For drawing the lines
+	
+	// Determine the longitude and latitude we'll need based on the selected location
 	var location = document.getElementById("location").innerHTML.slice(19, );
-	var elevation = elevationFromObserver(333.75, -11.8, 0.1278, 51.5, '04062021');
+	var longLat = returnLongLat(location);
+	
+	var elevation = elevationFromObserver(333.75, -11.8, longLat[0], longLat[1], '04062021');
 	document.getElementById("location").innerHTML = location;
 	var ctx = document.getElementById("myChart");
 	var myChart = new Chart(ctx, {
