@@ -128,8 +128,8 @@ function returnLongLat(location) {
 		lat = -23.0193;
 	}
 	else {
-		long = 0.0;
-		lat = 0.0;
+		long = 'Hello';
+		lat = 'Hello';
 	}
 	
 	return [long, lat];
