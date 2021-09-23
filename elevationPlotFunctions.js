@@ -128,8 +128,8 @@ function returnLongLat(location) {
 		lat = -23.0193;
 	}
 	else {
-		long = 'Hello';
-		lat = 'Hello';
+		long = 0.0;
+		lat = 0.0;
 	}
 	
 	return [long, lat];
@@ -144,7 +144,7 @@ function makePlot() {
 	// Determine the longitude and latitude we'll need based on the selected location
 	var location = document.getElementById("location").innerHTML.slice(19, );
 	var longLat = returnLongLat(location);
-	window.alert('1'+location+'1');
+	window.alert(longLat);
 	
 // 	// Get the RA and Dec
 // 	var ra = parseFloat(document.getElementById("RA").value);
