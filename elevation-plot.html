@@ -11,7 +11,7 @@
     
     <button class="button" id="homeButton" onclick="document.location='index.html'">Home</button>
  
-    <h3>Elevation Plot</h3>
+    <h3>Elevation Plot - EDIT</h3>
     <p>Plot the elevation against time for a source given a particular position on the globe. For now only a subset of locations are available. Please provide date in the dd/mm/yyyy format and remember to click "Plot" again if you change the location!</p>
     <p id="location">Selected Location: None<p>
     
@@ -32,10 +32,12 @@
         </div>
        </div>
     </form> 
-    
-    
+
     <button class="button" onclick="makePlot()">Plot</button>
     
+    <div class="plotWrapper">
+      <canvas id="myChart"></canvas>
+    </div>
     
    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
    <script src="elevationPlotFunctions.js"></script>
