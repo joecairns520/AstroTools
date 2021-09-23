@@ -111,10 +111,6 @@ function setLocation(locationName) {
 function returnLongLat(location) {
 	var long = 0.0;
 	var lat = 0.0;
-	if (location == 'None') {
-		long = 0.0;
-		lat = 0.0;
-	}
 	if (location == 'Greenwich Observatory') {
 		long = -0.0014;
 		lat = 51.4778;
@@ -128,8 +124,8 @@ function returnLongLat(location) {
 		lat = -23.0193;
 	}
 	else {
-		long = 'Hello';
-		lat = 'Hello';
+		long = 0.0;
+		lat = 0.0;
 	}
 	
 	return [long, lat];
@@ -144,19 +140,18 @@ function makePlot() {
 	// Determine the longitude and latitude we'll need based on the selected location
 	var location = document.getElementById("location").innerHTML.slice(19, );
 	var longLat = returnLongLat(location);
-	window.alert(longLat);
 	
-// 	// Get the RA and Dec
-// 	var ra = parseFloat(document.getElementById("RA").value);
-// 	var dec = parseFloat(document.getElementById("Dec").value);
+	// Get the RA and Dec
+	var ra = parseFloat(document.getElementById("RA").value);
+	var dec = parseFloat(document.getElementById("Dec").value);
 	
 // 	// Get the day, month and year from the plot
-// 	var dateIn = document.getElementById("Date").value;
-// 	var dateOut = date.slice(0, 2) + date.slice(3, 5) + date.slice(6, );
+	var dateIn = document.getElementById("Date").value;
+	var dateOut = date.slice(0, 2) + date.slice(3, 5) + date.slice(6, );
 	
 // 	// Get the elevation for the plot based on the above information
-// 	var elevation = elevationFromObserver(ra, dec, longLat[0], longLat[1], dateOut.toString());
-// 	window.alert(elevation);
+	var elevation = elevationFromObserver(ra, dec, longLat[0], longLat[1], dateOut.toString());
+	window.alert(elevation);
 	
 // 	// Plot the elevation
 // 	var ctx = document.getElementById("myChart");
