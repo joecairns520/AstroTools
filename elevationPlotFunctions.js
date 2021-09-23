@@ -119,17 +119,17 @@ function returnLongLat(location) {
 		long = -0.0014;
 		lat = 51.4778;
 	}
-	if (location == 'SMA') {
+	else if (location == 'SMA') {
 		long = -155.478;
 		lat = 19.8243;
 	}
-	if (location == 'ALMA') {
+	else if (location == 'ALMA') {
 		long = -67.7532;
 		lat = -23.0193;
 	}
 	else {
-		long = 0.0;
-		lat = 0.0;
+		long = 'Hello';
+		lat = 'Hello';
 	}
 	
 	return [long, lat];
