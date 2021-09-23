@@ -109,8 +109,12 @@ function setLocation(locationName) {
 
 // A messy function (and I'll find a better way to do this at some point!) that reads in the location string and outputs the RA and Dec
 function returnLongLat(location) {
-	var long = 0;
-	var lat = 0;
+	var long = 0.0;
+	var lat = 0.0;
+	if (location == 'None') {
+		long = 0.0;
+		lat = 0.0;
+	}
 	if (location == 'Greenwich Observatory') {
 		long = -0.0014;
 		lat = 51.4778;
@@ -122,6 +126,10 @@ function returnLongLat(location) {
 	if (location == 'ALMA') {
 		long = -67.7532;
 		lat = -23.0193;
+	}
+	else {
+		long = 0.0;
+		lat = 0.0;
 	}
 	
 	return [long, lat];
