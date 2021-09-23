@@ -147,6 +147,7 @@ function makePlot() {
 	
 	// Get the elevation for the plot based on the above information
 	var elevation = elevationFromObserver(ra, dec, longLat[0], longLat[1], dateOut.toString());
+	window.alert(elevation);
 	
 	// Plot the elevation
 	var ctx = document.getElementById("myChart");
