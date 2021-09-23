@@ -132,37 +132,37 @@ function returnLongLat(location) {
 function makePlot() {
 	// Our labels along the x-axis
 	var UT_time = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24];
-	
+	window.alert(UT_time);
 	// Determine the longitude and latitude we'll need based on the selected location
-	var location = document.getElementById("location").innerHTML.slice(19, );
-	var longLat = returnLongLat(location);
+	// var location = document.getElementById("location").innerHTML.slice(19, );
+// 	var longLat = returnLongLat(location);
 	
-	// Get the RA and Dec
-	var ra = parseFloat(document.getElementById("RA").value);
-	var dec = parseFloat(document.getElementById("Dec").value);
+// 	// Get the RA and Dec
+// 	var ra = parseFloat(document.getElementById("RA").value);
+// 	var dec = parseFloat(document.getElementById("Dec").value);
 	
-	// Get the day, month and year from the plot
-	var dateIn = document.getElementById("Date").value;
-	var dateOut = date.slice(0, 2) + date.slice(3, 5) + date.slice(6, );
+// 	// Get the day, month and year from the plot
+// 	var dateIn = document.getElementById("Date").value;
+// 	var dateOut = date.slice(0, 2) + date.slice(3, 5) + date.slice(6, );
 	
-	// Get the elevation for the plot based on the above information
-	var elevation = elevationFromObserver(ra, dec, longLat[0], longLat[1], dateOut.toString());
-	window.alert(elevation);
+// 	// Get the elevation for the plot based on the above information
+// 	var elevation = elevationFromObserver(ra, dec, longLat[0], longLat[1], dateOut.toString());
+// 	window.alert(elevation);
 	
-	// Plot the elevation
-	var ctx = document.getElementById("myChart");
-	var myChart = new Chart(ctx, {
-	  type: 'line',
-	  data: {
-	    labels: UT_time,
-	    datasets: [
-	      { 
-		data: elevation,
-		label: "Target",
-		borderColor: "#3e95cd",
-		fill: false
-	      }
-	    ]
-	  }
-	})
+// 	// Plot the elevation
+// 	var ctx = document.getElementById("myChart");
+// 	var myChart = new Chart(ctx, {
+// 	  type: 'line',
+// 	  data: {
+// 	    labels: UT_time,
+// 	    datasets: [
+// 	      { 
+// 		data: elevation,
+// 		label: "Target",
+// 		borderColor: "#3e95cd",
+// 		fill: false
+// 	      }
+// 	    ]
+// 	  }
+// 	})
 };
