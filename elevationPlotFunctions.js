@@ -135,7 +135,7 @@ function makePlot() {
 	
 	// Determine the longitude and latitude we'll need based on the selected location
 	var location = document.getElementById("location").innerHTML.slice(19, );
-	var longLat = returnLongLat(location);
+// 	var longLat = returnLongLat(location);
 	window.alert(UT_time);
 	
 // 	// Get the RA and Dec
