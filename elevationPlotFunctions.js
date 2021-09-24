@@ -147,8 +147,8 @@ function makePlot() {
 	
 	// Get the day, month and year from the plot
 	var dateIn = document.getElementById("Date").value;
-// 	var dateOut = date.slice(0, 2) + date.slice(3, 5) + date.slice(6, );
-	window.alert(dateIn);
+	var dateOut = dateIn.slice(0, 2) + dateIn.slice(3, 5) + dateIn.slice(6, );
+	window.alert(dateOut);
 // // 	// Get the elevation for the plot based on the above information
 // 	var elevation = elevationFromObserver(ra, dec, longLat[0], longLat[1], dateOut.toString());
 	
