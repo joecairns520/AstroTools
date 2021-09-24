@@ -148,25 +148,25 @@ function makePlot() {
 	// Get the day, month and year from the plot
 	var dateIn = document.getElementById("Date").value;
 	var dateOut = dateIn.slice(0, 2) + dateIn.slice(3, 5) + dateIn.slice(6, );
-	window.alert(dateOut);
-// // 	// Get the elevation for the plot based on the above information
-// 	var elevation = elevationFromObserver(ra, dec, longLat[0], longLat[1], dateOut.toString());
+
+	// Get the elevation for the plot based on the above information
+	var elevation = elevationFromObserver(ra, dec, longLat[0], longLat[1], dateOut.toString());
 	
 	
-// 	// Plot the elevation
-// 	var ctx = document.getElementById("myChart");
-// 	var myChart = new Chart(ctx, {
-// 	  type: 'line',
-// 	  data: {
-// 	    labels: UT_time,
-// 	    datasets: [
-// 	      { 
-// 		data: elevation,
-// 		label: "Target",
-// 		borderColor: "#3e95cd",
-// 		fill: false
-// 	      }
-// 	    ]
-// 	  }
-// 	})
+	// Plot the elevation
+	var ctx = document.getElementById("myChart");
+	var myChart = new Chart(ctx, {
+	  type: 'line',
+	  data: {
+	    labels: UT_time,
+	    datasets: [
+	      { 
+		data: elevation,
+		label: "Target",
+		borderColor: "#3e95cd",
+		fill: false
+	      }
+	    ]
+	  }
+	})
 };
